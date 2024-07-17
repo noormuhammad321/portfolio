@@ -17,7 +17,7 @@ with col1:
     st.title("I am Noor Muhammad")
 
 with col2:
-    st.image("images\\noor.jpg")
+    st.image("images/noor.jpg")
 
 st.title(" ")
 
