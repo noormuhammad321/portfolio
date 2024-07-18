@@ -1,10 +1,10 @@
 import streamlit as st
-import os
+from PIL import Image
 
 import google.generativeai as genai
+from ultralytics import YOLO
 
-
-
+yolo=YOLO("model/best.pt")
 api_key = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
@@ -56,6 +56,24 @@ st.title("My Skills")
 st.slider("Programming", 0, 100, 70)
 st.slider("Teaching", 0, 100, 60)
 st.slider("Logical thinking", 0, 100, 75)
+
+st.write(" ")
+st.title("My Projects")
+st.header("1) Object Detection of warehourse boxes")
+st.write("")
+st.write("Test the Project below by uploading an image: ")
+st.write("")
+uploaded_file= st.file_uploader("Upload Image ...",type=["jpg", "jpeg", "png"])
+if uploaded_file:   
+    print(uploaded_file)
+    image = Image.open(uploaded_file)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.write("")
+    #yolo.predict(image,save=True)
+    results=yolo(image)
+    for result in results:
+        result.save(filename="image.jpg")
+    st.image("image.jpg")
 
 
 st.subheader(" ")
