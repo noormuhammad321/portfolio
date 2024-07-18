@@ -1,4 +1,4 @@
 google-generativeai
-opencv-python
+opencv-python-headless
 pillow
 ultralytics==8.1.29
