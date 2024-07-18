@@ -1,4 +1,4 @@
 google-generativeai
 ultralytics==8.1.29
 pillow
-opencv-python==4.8.1
+opencv-python
