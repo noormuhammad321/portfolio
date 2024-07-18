@@ -1,1 +1,3 @@
 google-generativeai
+ultralytics==8.1.29
+pillow
