@@ -53,9 +53,9 @@ if st.button("ASK", use_container_width=400):
 
 st.write(" ")
 st.title("My Skills")
-st.slider("Programming", 0, 100, 70)
-st.slider("Teaching", 0, 100, 60)
-st.slider("Logical thinking", 0, 100, 75)
+st.slider("Programming", 0, 100, 70, disabled=True)
+st.slider("Teaching", 0, 100, 60, disabled=True)
+st.slider("Logical thinking", 0, 100, 75,disabled=True)
 
 st.write(" ")
 st.title("My Projects")
